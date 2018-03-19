@@ -1,0 +1,106 @@
+\documentclass[../main.tex]{subfiles}
+
+
+\begin{document}
+
+    The calculus of moving surfaces is a mathematical theory that sets itself as a sub-branch of differential geometry. It was first developed by french mathematician Jacques Hadamard and subsequently improved upon by many authors. The main object of study of the calculus of moving surfaces are embedded surfaces moving and stretching in time. The tool used to study these structures is the invariant time derivative whose definition will be built in the next few lines. It is worth recalling a few basic definitions of differtial geometry in order to efficiently describe and attack the calculus of moving surfaces. The next few lines will be dedicated to that purpose.
+    
+    \subsection{Basic manifold theory}
+    The following definitions, taken by Warner's textbook on manifolds and Lie groups \cite{warner2013foundations} will be worked upon. 
+    \begin{dfn}[Locally Euclidean Space]
+        A locally Euclidean space $M$ of dimension $d$ is a Hausdorff topological space $M$ for which each point has a neighborhood homeomorphic to a subset of $\mathbb{R}^{d}$.  If $\vaphi$ is a homeomorphism of a connected open set $U \subset M$ onto an open subset of $\mathbb{R}^{d}$, then $\varphi$ is called a coordinate map, the functions $x_i:=r_{i}\circ \varphi$ are called coordinate functions and the pair $(U,\varphi)$ is called a coordinate system.
+    \end{dfn}
+    ... add definitions of differentiable structure, atlas, manifold, submanifold, immersion and embedding. Offer some examples of immersion, submanifold and embedding.
+    
+    \subsection{Basic elements of embedded surfaces}
+        Unfortunately not much has been written to date on the calculus of moving surfaces. Most of the following discussion is taken from and can be expanded on by \cite{grinfeld2016introduction}. We wish now to develop the math behind the intuitive concept of an embedding. Let $N$ be an embedded manifold in $M$ and let the dimension of $N$ be equal to that of $M$ less of one. Let $S^\alpha(t)$ be a coordinate system of a subset of $N$ and let $\phi^{-1}$ be the inverse of the embedding map between $M$ and $N$: $\phi:M\to N$. Suppose tat the dependence of the coordinate system on $t$ is smooth: i.e. a $S^\alpha(t)$ is a smooth function of $t$. Further on we shall refer as the set of all $S^\alpha(t)$ as surface coordinates and they will be denoted by a Greek lettered index. Let $Z^i$ be a coordinate system in a subset of $M$ containing a subset of the image of $\phi^{-1}$. We shall denote the $i$-th coordinate of a point $p\in M$ as $Z^i(p)$. Using the $Z^i$ coordinates and the embedding map one can build a coordinate system for $N$ in the following way:
+        \begin{equation}
+            S^i(t):=Z^i(\phi^{-1}(p)),\quad p\in N
+        \end{equation}
+        These coordinates will be identified by the same letter $S$ to emphasize that they are to describe the same object, however one must always keep in mind that, as they are coordinates of $M$ they benefit from an extra component. The coordinate system $S^i$ therefore spans $N$ "inside" of $M$ an can be intuitively be imagined as the parametrization on the surface of the embedded manifold. It is a little bit more tricky to export the idea of a tangent space. Intuitively, it is clear that the tangent space of the embedded manifold will be a subspace of the tangent space of the large manifold. Before discussing the tangent plane as a whole, the attention should be shifted to a single vector. There is a natural connection between the surface and the ambient coordinates. Let $f$ be a function on $N$ to $\mathbb{R}$. We can define a "new" function $\tilde{f}:\phi^{-1}(N)\subset M\to \mathbb{R} $ defined by the relation $\tilde{f}=f\circ\phi $. We can view this function as an copy of $f$ on the point which are the "embedded version" in $M$ or, combined with $\phi^{-1}$ as a function from $N$ to $\mathbb{R}$, also, by its definition we have $\tilde{f}\circ\phi^{-1}=f$. Differentiating with respect to the $\alhpa$-th coordinate we get:
+        \begin{equation}
+            \partial_\alpha f = \partial_\alpha (\tilde{f}\circ\phi^{-1}) = \left[d\phi^{-1}\partial_\alpha\right]\tilde{f}
+        \end{equation}
+        to complete our transportation we must now allow for a composition with $\phi^{-1}$. In this sense we have transported the vector $\partial_\alpha$ to a vector on the tangent space in $M$. As all maps used were regular and linear the mapping of the vector is as well. Naively it can be thought of as a rectangular (not necessarily square) matrix. It is thus represented by a tensor-like object $Z_i^\alpha$ which we call the shift tensor. We call the tangent space to the embedding of $N$ in $M$ the span of all vectors ${Z^\alpha_i\partial_\alpha}_{i=1}^{d}$ and $\partial_\alpha$ are the tangents to the coordinate functions. Furthermore, as the dimension of the tangent space of $N$ is equal to that of $M$ less of one, and each vector in the tangent space to the embedding is determined by one in the tangent space of $N$ we expect there to be another vector in the tangent space of $M$ orthogonal all of the ones in the tangent space of the embedded manifold. We call this normalized vector the normal vector to the surface. There is an ambiguity still which is left, for the direction if the normal vector. For two dimensional closed surfaces embedded in $\R^3$ it is common to take the normal vector "pointing outwards".
+        
+        A natural question should arise. What is exactly the reason to introduce a new formalism for manifolds and not just add a coordinate to the existing ones. The answer to this question is that, quantities which are more easily thought of as being geometric and invariant of coordinate changes are not always "well behaved" with respect to derivations in time meaning that they do not always evolve in the same way. Consider for example a function $T(t):N\to \mathbb{R}$ which independent of the choice of coordinates (such as the contraction of two vector fields etc.) and consider also two sets of coordinates: $S^\alpha(t)$ and $S^\alpha'(t)$. For any fixed $t$ we have a jacobian $J^\alpha_{\ \alpha'}(t)$ transforming one set of coordinates into the other. When calculated with respect to the primed coordinates we denote $T(t)$ as $T(t,S^\alpha')$ whereas in the other case we omit the prime. Let $U$ and $U'$ also be defined as follows:
+        \begin{gather}
+            U:=\der{}{t}T(t,S^\alpha)   \\
+            U':=\der{}{t}T(t,S^{\alpha'})
+        \end{gather}
+        Finally, we have the equality:
+        \begin{equation}
+            T(t,S^{\alpha}')=T(t,J^\alpha_{\ \alpha'}S^{\alpha'})
+        \end{equation}
+        Differentiating with respect to time we get:
+        \begin{equation}
+            U'=U+\partial_\alpha T(t,J^\alpha_{\ \alpha'}S^{\alpha'})\partial_t(J^\alpha_{\ \alpha'}S^{\alpha'})
+        \end{equation}
+        Because of the last term which in general is nonzero we cannot say that $T$ evolves in the same way in the two reference frames. It is one of the goals of the calculus of moving surfaces to clarify such a divergence from intuition. In the least disruptive way possible we wish to develop a mathematical formalism which provides tools for our basic intuition. This is done not by changing anything already established by differential geometry but rather by introducing a new concept: a new kind of time derivative. In a sense, just like the covariant derivative was built we wish to build a "invariant time derivative". The key to this problem is to let the derivative vary as well as will be shown in the next section.
+        \subsection{Basic elements of calculus of moving surfaces}
+        Before introducing the two main results of the calculus of moving surfaces which will be used for our approach to the solution of the calculus of moving surfaces we must first introduce some kind of velocity for our moving manifold. Our goal will be to give a purely coordinate detached definition, in order to ensure it being a property of the object of study rather than one of the coordinate system of our choosing. Simply taking the time derivative of a coordinate function will not suffice. It is however the first step to the solution of this puzzle, hence consider the "coordinate velocity" defined as:
+        \begin{equation}
+            V^{i}(t,p):=\der{}{t}S^{i}(t,p)
+        \end{equation}
+        where $p$ is a point in $M$ and $S^{i}(t,p)$ is the $i$-th component of a coordinate function at the point $p$ at the time $t$. We shall prove that as defined in the equation above the coordinate velocity is not invariant to coordinate changes and in fact it does not even transform as a tensor.
+        
+        Provide proof
+        
+        The last equation in the proof provides a useful clue to the next step needed to build our definition of a coordinate free velocity. Namely, being proportional to the shift tensor, it is a linear combination of vectors in the tangent space to the surface under consideration. To get rid of it then we can just contract it with the normal vector, thus obtaining our final, coordinate free definition:
+        \begin{equation}
+            C:=V^{i}N_{i}
+        \end{equation}
+        The proof of this object being coordinate invariant is the same as that of $V^{i}$ not being so. Geometrically $C$ can be thought of as the velocity of a point on a coordinate function in the normal direction. Because of this it is often called interface velocity. 
+        
+        With this last object we will be able to construct a new type of derivative with which we will be able to operate in a purely coordinate free manner: a derivative not dependant on the coordinate functions we use to describe the manifold, and which preserves the tensor transformation property. One could just state the definition and show that it is well behaved, however due to its intuitive geometrical interpretation before doing so it is worth building in a heuristic way. Consider a point $P$ and an (ambient) coordinate function $S(t,A)$ passing through it on the a subset of $\phi^{-1}(N)$. Let $T$ be a function on that subset. In a small time $h$ the point $P$ as well as the whole coordinate function will move a bit, to a new position on the manifold which we will identify as $B$. Heuristically (and erroneously if one should be rigorous), one could parametrize the point $B$ with the following equation:
+        \begin{equation}
+            T(t,S(t,B))=T(t,S(t,P))+h\der{}{t}T(t,S(t,P))
+        \end{equation}
+        Now let $D$ be a point on the time translated coordinate function "close" to $B$. Following the coordinate function one might write
+        \begin{equation}
+            T(t,S(t,B))=T(t,S(t,D))+hV^j\nabla_jT(t,S(t,D))
+        \end{equation}
+        Eliminating the point $B$ in the two preceding equations we get:
+        \begin{equation}
+            T(t,S(t,P))-T(t,S(t,D))=h\left(\der{}{t}T(t,S(t,P))-V^\alpha\nabla_\alpha T(t,S(t,D))\right)
+        \end{equation}
+        Suggesting as a definition for the invariant derivative:
+        \begin{equation}
+            \dot{\nabla}T(t,S(t,B))=\der{}{t}T(t,S(t,P))-V^\alpha\nabla_\alpha T(t,S(t,D))
+        \end{equation}
+        It can be shown that this definition of an invariant time derivative is coordinate independent and allows for correct tensor transformations. SHOW IT
+        
+        As a useful example to built intuition for this kind of derivative, let $\bold{R}$ be a "position vector", a point in the parametrized image of the embedding function in $M$. Hence $\bold{R}$ can be thought of as not directly time dependant: only dependant on time through its coordinate parametrization. We wish now to express in a geometrically interpretable way the invariant time derivative of $\bold{R}$.
+        By its definition:
+        \begin{equation}
+          \dot{\nabla}\bold{R}=\der{}{t}\bold{R}-V^\alpha\nabla_\alpha\bold{R}
+        \end{equation}
+        Let now $S^i$ be a set of ambient coordinate functions on the embedding of the manifold. Deriving through we get:
+        \begin{align}
+          \dot{\nabla}\bold{R}&=\der{}{S^i}\bold{R}\der{}{t}S^i(t,P)-V^\alpha\nabla_\alpha\bold{R}=V^i\nabla_i\bold{R}-V^\alpha Z_\alpha^{\ i}\nabla_i\bold{R} \\
+          &=\left(V^i-V^\alpha Z_\alpha^{\ i}\right)\nabla_i\bold{R}
+        \end{align}
+        However:
+        \begin{equation}
+            V^\alpha Z_\alpha^{\ i}= V^jZ^\alpha_jZ^i_\alpha=V^j\left(\delta_j^i-N^iN_j\right)=V^i-V^jN^iN_j
+        \end{equation}
+        Prove.
+        
+        Hence:
+        \begin{equation}
+            \dot{\nabla}\bold{R}=V^jN^iN_j\nabla_i\bold{R}=CN^i\nabla_i\bold{R}
+        \end{equation}
+        Which may be interpreted as the speed of the point in the normal direction. This same result may be used to better express the invariant time derivative of any function of time and coordinates:
+        \begin{equation}
+        \dot{\nabla}T(t,S(t,B))=\der{}{t}T(t,S(t,P))-V^\alpha\nabla_\alpha T(t,S(t,D))=\der{}{t}T(t,S(t,P))+CN^i\nabla_iT(t,S(t,P))
+        \end{equation}
+        We now get to the last two results of the calculus of moving surfaces which will be used in the problem. These are the rules for the derivation of integral relations. One refers to volume integration and is completely analogous to the fundamental theorem of calculus while the second does not have a very intuitive meaning. The rules are:
+        \begin{equation}
+            \der{}{t}\int_\Omega Fd\Omega = \int_\Omega \der{}{t}Fd\Omega + \int_SCFdS
+        \end{equation}
+        Where $F$ is any kind of function on the embedded manifold, $\Omega $ is a subset of the manifold and $S$ is the boarder of $\Omega$. This formula can be intuitively interpreted as adding the contribution of a small change in the volume by integrating on its surface multiplied by its velocity. The second equation is:
+        \begin{equation}
+            \der{}{t}\int_SFdS=\int_S \dot{\nabla}FdS-\int_SCB_\alpha^\alpha FdS
+        \end{equation}
+        where everything is as before and $B_\alpha^\alpha$ is the curvature tensor.
+\end{document}

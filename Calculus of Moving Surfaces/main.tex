@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphics}
+
+\graphicspath{{images}{../images}}
+\usepackage{subfiles}
+
+\usepackage{biblatex}
+\addbibresource{Biblio.bib}
+
+\usepackage{amsthm}
+
+\usepackage{amsmath}
+\usepackage{amssymb, mathrsfs}
+\usepackage{amsthm}
+\usepackage[margin=1.00in]{geometry}
+\usepackage{lmodern}
+
+%Ambienti matematici
+\theoremstyle{plain} 
+\newtheorem{thm}{Theorem}
+
+\newtheorem{cor}[thm]{Corollary} 
+
+\newtheorem{lem}{Lemma} 
+
+\newtheorem{prop}{Proposition} 
+
+\theoremstyle{definition} 
+
+\newtheorem{dfn}{Definition}
+
+\theoremstyle{remark} 
+
+\newtheorem{rmk}{Remark} 
+
+\newcommand{\der}[3][]{\ensuremath{\dfrac{d^{#1}#2}{d#3^{#1}}}}
+\newcommand{\pder}[3][]{\ensuremath{\dfrac{\partial^{#1}#2}{\partial#3^{#1}}}}
+
+
+\title{Laplacian eigenvalues in regular polygons through the calculus of moving surfaces}
+\author{Davide Passaro}
+\date{March 2018}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+    \subfile{SubFiles/intro.tex}
+\section{Calculus of moving surfaces}
+    \subfile{SubFiles/cms.tex}
+    
+\printbibliography
+\end{document}
