@@ -1,0 +1,116 @@
+\documentclass[10pt, a4paper]{article}
+
+\usepackage{amsmath}
+
+\usepackage{amssymb, mathrsfs}
+
+\usepackage{amsthm}
+
+\usepackage[margin=1.00in]{geometry}
+
+\usepackage{lmodern}
+
+%Ambienti matematici
+\theoremstyle{plain} 
+
+\newtheorem{thm}{Theorem}
+
+\newtheorem{cor}[thm]{Corollary} 
+
+\newtheorem{lem}[thm]{Lemma} 
+
+\newtheorem{prop}[thm]{Proposizion} 
+
+\theoremstyle{definition} 
+
+\newtheorem{defn}{Definition}
+
+\theoremstyle{remark} 
+
+\newtheorem{rem}{Remark} 
+
+
+%Simboli insiemistici
+\DeclareMathOperator{\R}{\mathbb{R}}
+\DeclareMathOperator{\N}{\mathbb{N}}
+\DeclareMathOperator{\Z}{\mathbb{Z}}
+\DeclareMathOperator{\Q}{\mathbb{Q}}
+\DeclareMathOperator{\K}{\mathbb{K}}
+
+
+\newcommand{\der}[3][]{\ensuremath{\dfrac{d^{#1}#2}{d#3^{#1}}}}
+
+\newcommand{\pder}[3][]{\ensuremath{\dfrac{\partial^{#1}#2}{\partial#3^{#1}}}}
+\newcommand{\SC}{Schwartz Christoffel}
+\title{Schwartz Christoffel Mapping Notes}
+\author{Davide Passaro}
+\date{February 2018}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+The objective of creating a Schwartz Christoffel mapping is to create a conformal transformation from the upper complex plane to an arbitrary region in the complex plane. The main idea is to express the conformal mapping through its derivative, accordi to the following:
+\begin{equation}
+    \label{eqn:SC}
+    f'=\prod f_k
+\end{equation}
+This can serve also as a definition for a Schwartz Christoffel mapping. Most conformal transformations (whose analytical form is known) are Schwartz Christoffel mappings.
+\begin{thm}[Schwartz reflection principle]
+    Let $f $ be analytic in the upper half unit disk. Let $f $ be real and continuous on the real axis. Then $ f $ can be extended to the lower half plane as follows:
+    \begin{equation}
+        f(\overline{z})=\overline{f(z)}
+    \end{equation}
+    The function above is analytic in the unit disk.
+\end{thm}
+The main idea and intuition behind equation $ \ref{eqn:SC} $ is that, by multiplying complex numbers together, the angles they form with the real axis sum. Formally we have that:
+\begin{gather}
+\label{eqn:sumArg}
+\arg(z_1z_2)=\arg(z_1)+\arg(z_2)
+\end{gather}
+Furthermore, we can thing of regions in the complex plane as being delimited by polygons. Polygons, we can describe by using the angles between the segments that make up its border. By playing with these angles and equation \ref{eqn:sumArg} we can try to build up the functions $ f_k $ in equation \ref{eqn:SC}.
+\begin{thm}[Schwartx Christoffel fundamental mapping Theorem]
+	\label{thm:SCfundamental}
+	Let $ P $ be the interior of a polygon $ \Gamma $ having vertices $ \{w_i\}_{i=1}^n $ and interior angles $ \{\pi\alpha_{i}\}_{i=1}^n $ in counterclockwise order. Let $ f $ be any conformal map from the upper plane $ H^+ $ to $ P $ with $ f(\infty)=w_n $. Then:
+	\begin{gather}
+		\label{eqn:SCform}
+		f(z)=A+C\int^z\prod_{k=1}^{n-1}(\zeta-z_k)^{\alpha_k-1}d\zeta
+	\end{gather}
+	for some complex constants $ A,\ C $ where $ w_k=f(z_k) $ for $ k=1,2,\dots,n $.
+\end{thm}
+\begin{rem}
+	The lower bound of integration is left unspecified because the additive constant $ A $ makes it ininfluential to the function.
+\end{rem}
+\begin{rem}
+	One of the many difficulties will be to find the correct values for $ z_k $ which we will call the prevertices. The distancing between these is influential to the side lengths of the sought after polygon.
+\end{rem}
+\begin{defn}
+	We define the Schwartz Christoffel parameter problem to be the problem of finding the correct values for the $ z_k $.
+\end{defn}
+\section{Essentials}
+\subsection{Polygons}
+\begin{defn}
+	We define a \emph{generalized polygon} $ \Gamma $ to be a set of $ n $ vertices $ \{w_{i_n}\}_{i\in\N} $ where by $ i_n $ I mean $ i\mod[n] $ (the remainder of the division of $ i $ by $ b $) with the requirement that the sum of all interior angles be $ 2\pi $. 
+\end{defn}
+We define also the interior angle:
+\begin{defn}
+	We define the interior angle at the point $ k $ to e the  angle swept from the outgoing side at $ w_{k} $ to the incoing side. We shall henceforth call $ \alpha_k\pi $ the angle at the $ k $-th point. If $ \left|w_k\right|<\infty $ then the interior angle is grater than zero and less than, or equal to $ 2 $. Otherwise, we measure the angle on the tangent space to the stereographic projection sphere, and account for it with a negative sign.
+\end{defn}
+\begin{lem}
+	\label{lem:anglesum}
+	$$ \sum_{k=1}^{n}\alpha_k=n-2 $$
+\end{lem}
+The Schwartz-Christoffel formula can be reexpressed to be a mapping from the disk to a polygon. The equation becomes:
+\begin{gather*}
+f(z)=A+C\int^{z}\prod_{k=1}^{n}\left(1-\dfrac{\zeta}{z_k}\right)^{\alpha_k-1}d\zeta
+\end{gather*}
+\subsection{Polygons with one or two vertices}
+The problem is simpler in the case that there are only two or three vertices to the polygon. In particular, because by considering Mobius maps that act as endomorphisms on $ H^{+} $ one has three degrees of freedom, and thus can choose the three vertices to be mapped arbitrarely on the polygon (as long as ordering is conserved?).
+
+The only polyon with one vertex is the line. It is given by $ \Gamma=A+Cz $. One finds that there are more options when considering two vertices. In this case we have, be lemma \ref{lem:anglesum} $ \alpha_1+\alpha_2=0 $ so either: $ \alpha_1=\alpha_2=0 $ or $ \alpha_1=-\alpha_2\neq0 $. In the first case both vertices are at infinity, the region is a strip. The constants $ A,\ C $ help regulate the orientation, position and width of the strip.
+$$\frac{\sec (\theta ) \cos \left(\frac{\pi }{N}\right)+t \sec ^2(\theta ) \cos
+	^2\left(\frac{\pi }{N}\right)-2 t \sec (\theta ) \cos \left(\frac{\pi
+	}{N}\right)+t-1}{\sqrt{\left\left| t \cos \left(\frac{\pi }{N}\right) \sec ^2(\theta )-t
+		\cos (\theta )+\cos (\theta )\right\right| ^2+\left| (t-1) \sin (\theta )\right| ^2}}$$
+\end{document}

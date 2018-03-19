@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphics}
+
+\graphicspath{{images}{../images}}
+\usepackage{subfiles}
+
+\usepackage{cite}
+
+\usepackage{amsthm}
+
+\usepackage{amsmath}
+\usepackage{amssymb, mathrsfs}
+\usepackage{amsthm}
+\usepackage[margin=1.00in]{geometry}
+\usepackage{lmodern}
+
+%Ambienti matematici
+\theoremstyle{plain} 
+\newtheorem{thm}{Theorem}
+
+\newtheorem{cor}[thm]{Corollary} 
+
+\newtheorem{lem}{Lemma} 
+
+\newtheorem{prop}{Proposition} 
+
+\theoremstyle{definition} 
+
+\newtheorem{dfn}{Definition}
+
+\theoremstyle{remark} 
+
+\newtheorem{rmk}{Remark} 
+
+\newcommand{\scal}[2]{\ensuremath{\left<#1,#2\right>}}
+\newcommand{\der}[2]{\ensuremath{\dfrac{d#1}{d#2}}}
+\newcommand{\pder}[3][]{\ensuremath{\dfrac{\partial^{#1}#2}{\partial#3^{#1}}}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+
+\begin{document}
+
+\begin{lem}
+	\begin{gather}
+	\int_{\Omega}\psi\partial_{t}\psi d\Omega =0
+	\end{gather}
+\end{lem}
+\begin{proof}
+	We start with the normalization condition:
+	\begin{gather}
+	\int_{\Omega}\left|\psi\right|d\Omega=1
+	\end{gather}
+	We wish now derive now by time. As our boundary is dependant on time as well as the function calculating this derivative is not so simple and requires an application of the calculus of moving surfaces. Specifically it is exactly the case of equation \ref{eqn:intex1}. 
+	\begin{gather}
+	\int_{\Omega}\partial_{t}\left|\psi\right|^{2}d\Omega+\int_{\partial \Omega}C\left|\psi\right|dS=0
+	\end{gather}
+	Under the Dirichlet boundary conditions, the second term on the left hand side is null ($ x\in\partial\Omega\implies\psi(x)=0 $). Expanding the derivative we get that $ \psi $ and $ \partial_{t}\psi $ are orthogonal in $ \mathcal{L}^{2}(\R^{2}) $.
+\end{proof}
+
+\end{document}
+
+

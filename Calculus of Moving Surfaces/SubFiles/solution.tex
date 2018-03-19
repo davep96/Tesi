@@ -5,6 +5,7 @@
 		\subsection{General strategy}
 		Before attempting a solution we should first provide an outline of the preceidure we will use. First of all we restate the main equation of the problem:
 		\begin{gather}
+			\label{eqn:lapleig}
 			\Delta\psi=\lambda\psi
 		\end{gather}
 		This equation we wish to study perturbatively from the solution of a circle, which is known and was reported in a previous section. It is worth noting that we are operating under the assumption that by our problem is well behaved under the idea that by increasing the number of sides of the polygon the solution $ \psi $ becomes closer and closer to that of the circle. However founded this assumption may intuitively seem, sometimes in the past it has failed. A notable example that was pointed out by R. Jones \cite{Jones2017} comes from thin plate theory and is known as the \emph{polyon-circle paradox}. This paradox is reported in \cite{murray1973polygon}. This being said, we seek an expansion of $ \lambda $ such as:
@@ -18,5 +19,36 @@
 		We will show that not everything however is so simple. As it is not always possible to express what we need. In such cases we will Taylor expand over the appropriate variable in order to better arrive at the solution we are seeking.
 		
 	\subsection{Hadamard's term}
-		A
+		Having established how we intend to approach the problem let us start by differentiating with respect to time equation \ref{eqn:lapleig}. Assuming everything is well behaved enough that we can apply Shwartz's lemma we get:
+		\begin{gather}
+			\label{eqn:hadter}
+			\Delta\partial_{t}\psi=\lambda'\psi+\lambda\partial_{t}\psi
+		\end{gather}
+		Where $ \lambda' $ indicates the time derivative of $ \lambda $. It is a remarkable result of the calculus of moving surfaces that:
+		\begin{gather}
+			\lambda'=-\int_{S}C\left|\nabla\psi\right|^{2}dS
+		\end{gather}
+		$ C $ being the interface velocity of the boundary. Because this relation was found by Hadamard we shall refer to $ \lambda' $ as the Hadamard term. As suggested by Strang and Grinfeld to remove this leading term one should keep the area constant. It is intuitive to see why it should be so if only $ C $ were inside the integral: the integral acts as a mediator on all of the small displacements of the curve, thus, if the total (signed) area is null, thus should be the integral. To most intents and purposes this quantity may be interpreted as the rate of change of the are $ A'(t) $. It is a little less so for the case where also $ \left|\nabla\psi\right|^{2} $. Recall that we are seeking the first term in a perturbation series of the eigenvalue solution for the laplacian in a unit circle. Hence we only only need to evaluate \ref{eqn:hadter} in that case. It was prooven however that:
+		\begin{gather}
+		\der{}{r}\psi(1)=\dfrac{\rho}{\sqrt{\pi}}
+		\end{gather}
+		$ \rho $ being such that $ \rho^{2}=\lambda_{0} $. Hence, as:
+		\begin{gather}
+			\begin{cases}
+			\der{}{x}=\cos\theta\der{}{r}-\dfrac{\sin\theta}{r}\der{}{\theta}			\vspace{3mm}\\
+			\der{}{y}=\sin\theta\der{}{r}+\dfrac{\cos\theta}{r}\der{}{\theta}
+			\end{cases}
+		\end{gather}
+		we can easily find that:
+		\begin{gather}
+			\scal{\nabla\psi(1)}{\nabla\psi(1)}=\left(\der{}{x}\psi(1) \right)^{2}+\left(\der{}{y}\psi(1) \right)^{2}=\left(\der{}{r}\psi(1)\right)^{2}+\left(\dfrac{1}{r}\der{}{\theta}\psi(1)\right)^{2}=\left(\der{}{r}\psi(1)\right)^{2}=\dfrac{\lambda_{0}}{\pi}
+		\end{gather}
+		In the last equality the fact that $ \psi(r) $ is independant of the angle $ \theta $. As that value is constant it can be brought out of integration the integration and we get yet again the case where only $ C $ is to be integrated.
+		We proceed now by prooving equation \ref{eqn:hadter}. 
+		\begin{thm}
+			\ref{eqn:hadter} holds.
+		\end{thm}
+		\begin{proof}
+			hgfhd
+		\end{proof}
 \end{document}
