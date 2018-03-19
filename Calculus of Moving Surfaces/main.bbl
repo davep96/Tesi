@@ -1,0 +1,27 @@
+\begin{thebibliography}{1}
+
+\bibitem{grinfeld2016introduction}
+Pavel Grinfeld.
+\newblock {\em Introduction to tensor analysis and the calculus of moving
+  surfaces}.
+\newblock Springer, 2016.
+
+\bibitem{grinfeld2004laplacian}
+Pavel Grinfeld and Gilbert Strang.
+\newblock The laplacian eigenvalues of a polygon.
+\newblock {\em Computers \& Mathematics with Applications}, 48(7-8):1121--1133,
+  2004.
+
+\bibitem{grinfeld2012laplace}
+Pavel Grinfeld and Gilbert Strang.
+\newblock Laplace eigenvalues on regular polygons: A series in 1/n.
+\newblock {\em Journal of Mathematical Analysis and Applications},
+  385(1):135--149, 2012.
+
+\bibitem{warner2013foundations}
+Frank~W Warner.
+\newblock {\em Foundations of differentiable manifolds and Lie groups},
+  volume~94.
+\newblock Springer Science \& Business Media, 2013.
+
+\end{thebibliography}
