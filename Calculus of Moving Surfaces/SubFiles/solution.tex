@@ -1,0 +1,22 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+		We now turn our attention from the theory of the calculus of moving surfaces to the problem we originally had: that of the solution of the eigenvalue problem for the laplacian in regular polygons. The solution reported here is due to P. Grinfeld, and G. Strang and was originally published in \cite{grinfeld2012laplace}. The goal is to find an analytical expression for the first few terms of the expansion of the eigenvalue in terms of the variable $ \frac{1}{N} $, $ N $ being the number of sides of the regular polygon. This will be acheived using considerations from the calculus of moving surfaces, and particulartly equation \ref{eqn:intex1}.
+		\subsection{General strategy}
+		Before attempting a solution we should first provide an outline of the preceidure we will use. First of all we restate the main equation of the problem:
+		\begin{gather}
+			\Delta\psi=\lambda\psi
+		\end{gather}
+		This equation we wish to study perturbatively from the solution of a circle, which is known and was reported in a previous section. It is worth noting that we are operating under the assumption that by our problem is well behaved under the idea that by increasing the number of sides of the polygon the solution $ \psi $ becomes closer and closer to that of the circle. However founded this assumption may intuitively seem, sometimes in the past it has failed. A notable example that was pointed out by R. Jones \cite{Jones2017} comes from thin plate theory and is known as the \emph{polyon-circle paradox}. This paradox is reported in \cite{murray1973polygon}. This being said, we seek an expansion of $ \lambda $ such as:
+		\begin{gather}
+			\lambda = \lambda_{0}\left(1+\dfrac{c_{1}}{N}+\dfrac{c_{2}}{N^{2}}+\dfrac{c_{3}}{N^{3}}+\dots\right)
+		\end{gather}
+		hence our main objective will be to find an expression for the coefficients $ c_{i} $. To accomplish this feat we start by looking for a homotopy $ \Phi:I\times\left[0,1\right]\to\R^{2} $ suche that: $ \Phi\left(\theta,0\right) $ is the parametrization of the circle, and $ \Phi\left(\theta,1\right) $ is the parametirzation of the polygon. Different values for the second parameter (which we will henceforth refer to as time) will identify different curves which will be transistioning forms between the polygons and the circle. Further will be said on the choice of homotopy in a following section.
+		
+		Having found the homotopy expression for the boudary we can incorporate it in the original problem as a boundary condition dependant on $ t $. Our solution $ \psi $ will thus depend on this parameter as well. If our choices are sufficiently well behaved we will also be able to apply calculus to $ \psi $ also in this new variable, hence, hopefully we are able to construct a Maclaurin expansion of $ \psi $ in terms of the variable $ t $. Evaluating it at $ t=1 $ we will then have an expression which we will be able to express as a series of $ \frac{1}{N} $.
+		
+		We will show that not everything however is so simple. As it is not always possible to express what we need. In such cases we will Taylor expand over the appropriate variable in order to better arrive at the solution we are seeking.
+		
+	\subsection{Hadamard's term}
+		A
+\end{document}
