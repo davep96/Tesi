@@ -8,7 +8,7 @@
     \subsection{Basic manifold theory}
     The following definitions, taken by Warner's textbook on manifolds and Lie groups \cite{warner2013foundations} will be worked upon. 
     \begin{dfn}[Locally Euclidean Space]
-        A locally Euclidean space $M$ of dimension $d$ is a Hausdorff topological space $M$ for which each point has a neighborhood homeomorphic to a subset of $\mathbb{R}^{d}$.  If $\vaphi$ is a homeomorphism of a connected open set $U \subset M$ onto an open subset of $\mathbb{R}^{d}$, then $\varphi$ is called a coordinate map, the functions $x_i:=r_{i}\circ \varphi$ are called coordinate functions and the pair $(U,\varphi)$ is called a coordinate system.
+        A locally Euclidean space $M$ of dimension $d$ is a Hausdorff topological space $M$ for which each point has a neighborhood homeomorphic to a subset of $\mathbb{R}^{d}$.  If $\varphi$ is a homeomorphism of a connected open set $U \subset M$ onto an open subset of $\mathbb{R}^{d}$, then $\varphi$ is called a coordinate map, the functions $x_i:=r_{i}\circ \varphi$ are called coordinate functions and the pair $(U,\varphi)$ is called a coordinate system.
     \end{dfn}
     ... add definitions of differentiable structure, atlas, manifold, submanifold, immersion and embedding. Offer some examples of immersion, submanifold and embedding.
     
@@ -17,20 +17,20 @@
         \begin{equation}
             S^i(t):=Z^i(\phi^{-1}(p)),\quad p\in N
         \end{equation}
-        These coordinates will be identified by the same letter $S$ to emphasize that they are to describe the same object, however one must always keep in mind that, as they are coordinates of $M$ they benefit from an extra component. The coordinate system $S^i$ therefore spans $N$ "inside" of $M$ an can be intuitively be imagined as the parametrization on the surface of the embedded manifold. It is a little bit more tricky to export the idea of a tangent space. Intuitively, it is clear that the tangent space of the embedded manifold will be a subspace of the tangent space of the large manifold. Before discussing the tangent plane as a whole, the attention should be shifted to a single vector. There is a natural connection between the surface and the ambient coordinates. Let $f$ be a function on $N$ to $\mathbb{R}$. We can define a "new" function $\tilde{f}:\phi^{-1}(N)\subset M\to \mathbb{R} $ defined by the relation $\tilde{f}=f\circ\phi $. We can view this function as an copy of $f$ on the point which are the "embedded version" in $M$ or, combined with $\phi^{-1}$ as a function from $N$ to $\mathbb{R}$, also, by its definition we have $\tilde{f}\circ\phi^{-1}=f$. Differentiating with respect to the $\alhpa$-th coordinate we get:
+        These coordinates will be identified by the same letter $S$ to emphasize that they are to describe the same object, however one must always keep in mind that, as they are coordinates of $M$ they benefit from an extra component. The coordinate system $S^i$ therefore spans $N$ "inside" of $M$ an can be intuitively be imagined as the parametrization on the surface of the embedded manifold. It is a little bit more tricky to export the idea of a tangent space. Intuitively, it is clear that the tangent space of the embedded manifold will be a subspace of the tangent space of the large manifold. Before discussing the tangent plane as a whole, the attention should be shifted to a single vector. There is a natural connection between the surface and the ambient coordinates. Let $f$ be a function on $N$ to $\mathbb{R}$. We can define a "new" function $\tilde{f}:\phi^{-1}(N)\subset M\to \mathbb{R} $ defined by the relation $\tilde{f}=f\circ\phi $. We can view this function as an copy of $f$ on the point which are the "embedded version" in $M$ or, combined with $\phi^{-1}$ as a function from $N$ to $\mathbb{R}$, also, by its definition we have $\tilde{f}\circ\phi^{-1}=f$. Differentiating with respect to the $\alpha$-th coordinate we get:
         \begin{equation}
             \partial_\alpha f = \partial_\alpha (\tilde{f}\circ\phi^{-1}) = \left[d\phi^{-1}\partial_\alpha\right]\tilde{f}
         \end{equation}
         to complete our transportation we must now allow for a composition with $\phi^{-1}$. In this sense we have transported the vector $\partial_\alpha$ to a vector on the tangent space in $M$. As all maps used were regular and linear the mapping of the vector is as well. Naively it can be thought of as a rectangular (not necessarily square) matrix. It is thus represented by a tensor-like object $Z_i^\alpha$ which we call the shift tensor. We call the tangent space to the embedding of $N$ in $M$ the span of all vectors ${Z^\alpha_i\partial_\alpha}_{i=1}^{d}$ and $\partial_\alpha$ are the tangents to the coordinate functions. Furthermore, as the dimension of the tangent space of $N$ is equal to that of $M$ less of one, and each vector in the tangent space to the embedding is determined by one in the tangent space of $N$ we expect there to be another vector in the tangent space of $M$ orthogonal all of the ones in the tangent space of the embedded manifold. We call this normalized vector the normal vector to the surface. There is an ambiguity still which is left, for the direction if the normal vector. For two dimensional closed surfaces embedded in $\R^3$ it is common to take the normal vector "pointing outwards".
         
-        A natural question should arise. What is exactly the reason to introduce a new formalism for manifolds and not just add a coordinate to the existing ones. The answer to this question is that, quantities which are more easily thought of as being geometric and invariant of coordinate changes are not always "well behaved" with respect to derivations in time meaning that they do not always evolve in the same way. Consider for example a function $T(t):N\to \mathbb{R}$ which independent of the choice of coordinates (such as the contraction of two vector fields etc.) and consider also two sets of coordinates: $S^\alpha(t)$ and $S^\alpha'(t)$. For any fixed $t$ we have a jacobian $J^\alpha_{\ \alpha'}(t)$ transforming one set of coordinates into the other. When calculated with respect to the primed coordinates we denote $T(t)$ as $T(t,S^\alpha')$ whereas in the other case we omit the prime. Let $U$ and $U'$ also be defined as follows:
+        A natural question should arise. What is exactly the reason to introduce a new formalism for manifolds and not just add a coordinate to the existing ones. The answer to this question is that, quantities which are more easily thought of as being geometric and invariant of coordinate changes are not always "well behaved" with respect to derivations in time meaning that they do not always evolve in the same way. Consider for example a function $T(t):N\to \mathbb{R}$ which independent of the choice of coordinates (such as the contraction of two vector fields etc.) and consider also two sets of coordinates: $S^\alpha(t)$ and $S^{\alpha'}(t)$. For any fixed $t$ we have a jacobian $J^\alpha_{\ \alpha'}(t)$ transforming one set of coordinates into the other. When calculated with respect to the primed coordinates we denote $T(t)$ as $T(t,S^{\alpha'})$ whereas in the other case we omit the prime. Let $U$ and $U'$ also be defined as follows:
         \begin{gather}
             U:=\der{}{t}T(t,S^\alpha)   \\
             U':=\der{}{t}T(t,S^{\alpha'})
         \end{gather}
         Finally, we have the equality:
         \begin{equation}
-            T(t,S^{\alpha}')=T(t,J^\alpha_{\ \alpha'}S^{\alpha'})
+            T(t,S^{\alpha'})=T(t,J^\alpha_{\ \alpha'}S^{\alpha'})
         \end{equation}
         Differentiating with respect to time we get:
         \begin{equation}
@@ -70,15 +70,15 @@
         \end{equation}
         It can be shown that this definition of an invariant time derivative is coordinate independent and allows for correct tensor transformations. SHOW IT
         
-        As a useful example to built intuition for this kind of derivative, let $\bold{R}$ be a "position vector", a point in the parametrized image of the embedding function in $M$. Hence $\bold{R}$ can be thought of as not directly time dependant: only dependant on time through its coordinate parametrization. We wish now to express in a geometrically interpretable way the invariant time derivative of $\bold{R}$.
+        As a useful example to built intuition for this kind of derivative, let $\mathbf{R}$ be a "position vector", a point in the parametrized image of the embedding function in $M$. Hence $\mathbf{R}$ can be thought of as not directly time dependant: only dependant on time through its coordinate parametrization. We wish now to express in a geometrically interpretable way the invariant time derivative of $\mathbf{R}$.
         By its definition:
         \begin{equation}
-          \dot{\nabla}\bold{R}=\der{}{t}\bold{R}-V^\alpha\nabla_\alpha\bold{R}
+          \dot{\nabla}\mathbf{R}=\der{}{t}\mathbf{R}-V^\alpha\nabla_\alpha\mathbf{R}
         \end{equation}
         Let now $S^i$ be a set of ambient coordinate functions on the embedding of the manifold. Deriving through we get:
         \begin{align}
-          \dot{\nabla}\bold{R}&=\der{}{S^i}\bold{R}\der{}{t}S^i(t,P)-V^\alpha\nabla_\alpha\bold{R}=V^i\nabla_i\bold{R}-V^\alpha Z_\alpha^{\ i}\nabla_i\bold{R} \\
-          &=\left(V^i-V^\alpha Z_\alpha^{\ i}\right)\nabla_i\bold{R}
+          \dot{\nabla}\mathbf{R}&=\der{}{S^{i}}\mathbf{R}\der{}{t}S^{i}(t,P)-V^{\alpha}\nabla_{\alpha}\mathbf{R}=V^{i}\nabla_{i}\mathbf{R}-V^{\alpha} Z_{\alpha}^{\ i}\nabla_{i}\mathbf{R} \\
+          &=\left(V^{i}-V^{\alpha} Z_{\alpha}^{\ i}\right)\nabla_{i}\mathbf{R}
         \end{align}
         However:
         \begin{equation}
@@ -88,7 +88,7 @@
         
         Hence:
         \begin{equation}
-            \dot{\nabla}\bold{R}=V^jN^iN_j\nabla_i\bold{R}=CN^i\nabla_i\bold{R}
+            \dot{\nabla}\mathbf{R}=V^jN^iN_j\nabla_i\mathbf{R}=CN^i\nabla_i\mathbf{R}
         \end{equation}
         Which may be interpreted as the speed of the point in the normal direction. This same result may be used to better express the invariant time derivative of any function of time and coordinates:
         \begin{equation}
