@@ -1,0 +1,516 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     18698,        508]
+NotebookOptionsPosition[     17347,        460]
+NotebookOutlinePosition[     17695,        475]
+CellTagsIndexPosition[     17652,        472]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ "Deformazione del bordo di una circonferenza ad un poligono.\n",
+ StyleBox["Fissiamoci su un lato particolare. Supponiamo di parametrizzare la \
+circonferenza con \[Theta] e di avere un poligono con N lati. Una semplice \
+analisi geometrica dice che, la distanza che ogni punto deve percorrere in \
+direzione radiale \[EGrave]:", "Text"]
+}], "Subsubsection",
+ CellChangeTimes->{{3.7288173213706384`*^9, 3.7288174292366343`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"V", "[", 
+   RowBox[{"\[Theta]_", ",", "N_"}], "]"}], ":=", 
+  RowBox[{"1", "-", 
+   RowBox[{
+    RowBox[{"Cos", "[", 
+     RowBox[{"\[Pi]", "/", "N"}], "]"}], "/", 
+    RowBox[{"Cos", "[", "\[Theta]", "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.728817237863349*^9, 3.7288172799204383`*^9}, {
+  3.728817412996395*^9, 3.7288174134492693`*^9}}],
+
+Cell["\<\
+Vogliamo calcolare la velocit\[AGrave] C. Questa \[EGrave] definita come la \
+proiezione sulla normale istantanea alla superfice in ogni punto della \
+velocit\[AGrave] radiale. Incominciamo a calcolare quindi \
+l\[CloseCurlyQuote]omotopia che porti la circonferenza nel lato poligonale. \
+La velocit\[AGrave] puntuale ha modulo proporzionale alla distanza. \
+Supponendo che si sposti in un intervallo di tempo unitario si ha che la \
+velocit\[AGrave] \[EGrave] proprio -V. Sia \[Gamma][\[Theta],N,t] la curva, \
+parametrizzata per angoli \[Theta], che arrivi in un lato di un poligono ad N \
+lati e sia t il parametro affine dell\[CloseCurlyQuote]evoluzione dalla \
+circonferenza al lato. Si ha dunque che:\[LineSeparator]\
+\>", "Text",
+ CellChangeTimes->{{3.7288175477592273`*^9, 3.728817852528186*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[Gamma]", "[", 
+   RowBox[{"\[Theta]_", ",", "N_", ",", "t_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Cos", "[", "\[Theta]", "]"}], ",", 
+     RowBox[{"Sin", "[", "\[Theta]", "]"}]}], "}"}], "*", 
+   RowBox[{"(", 
+    RowBox[{"1", "-", 
+     RowBox[{"t", "*", 
+      RowBox[{"V", "[", 
+       RowBox[{"\[Theta]", ",", "N"}], "]"}]}]}], ")"}]}]}]], "Input",
+ CellChangeTimes->{{3.728817858234379*^9, 3.7288178717090673`*^9}, {
+  3.7288179022769365`*^9, 3.728817961665525*^9}, {3.7288181013149147`*^9, 
+  3.7288181133967276`*^9}, {3.7288203113382807`*^9, 3.728820311682106*^9}, {
+  3.72882035450378*^9, 3.7288203995095773`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"ParametricPlot", "[", 
+    RowBox[{
+     RowBox[{"\[Gamma]", "[", 
+      RowBox[{"\[Theta]", ",", "n", ",", "t"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\[Theta]", ",", 
+       RowBox[{
+        RowBox[{"-", "\[Pi]"}], "/", "n"}], ",", 
+       RowBox[{"\[Pi]", "/", "n"}]}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", "1"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "3", ",", "50", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "1", ",", "0.01"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.728817966447281*^9, 3.728818074699151*^9}, {
+  3.7288181319642296`*^9, 3.728818137529024*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`n$$ = 3, $CellContext`t$$ = 0., 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`n$$], 3, 50, 1}, {
+      Hold[$CellContext`t$$], 0, 1, 0.01}}, Typeset`size$$ = {
+    360., {175., 180.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`n$22761$$ = 
+    0, $CellContext`t$22762$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`n$$ = 3, $CellContext`t$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`n$$, $CellContext`n$22761$$, 0], 
+        Hold[$CellContext`t$$, $CellContext`t$22762$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> ParametricPlot[
+        $CellContext`\[Gamma][$CellContext`\[Theta], $CellContext`n$$, \
+$CellContext`t$$], {$CellContext`\[Theta], (-Pi)/$CellContext`n$$, 
+         Pi/$CellContext`n$$}, PlotRange -> 1], 
+      "Specifications" :> {{$CellContext`n$$, 3, 50, 1}, {$CellContext`t$$, 0,
+          1, 0.01}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{411., {236., 242.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.728818078388771*^9, 3.72881813910719*^9, {3.7288203811602736`*^9, 
+   3.728820404856203*^9}, 3.7306069745494685`*^9, 3.730609112191206*^9}]
+}, Open  ]],
+
+Cell["\<\
+Estendendo questa soluzione anche sul resto della circonferenza si ha la \
+curva completa.\
+\>", "Text",
+ CellChangeTimes->{{3.7288181971247787`*^9, 3.7288182343656464`*^9}, 
+   3.728818454709518*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"ParametricPlot", "[", 
+    RowBox[{
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", GridBox[{
+           {
+            RowBox[{"Cos", "[", 
+             RowBox[{"\[Theta]", "+", 
+              RowBox[{"i", "*", "2", "*", 
+               RowBox[{"\[Pi]", "/", "n"}]}]}], "]"}]},
+           {
+            RowBox[{"Sin", "[", 
+             RowBox[{"\[Theta]", "+", 
+              RowBox[{"i", "*", "2", "*", 
+               RowBox[{"\[Pi]", "/", "n"}]}]}], "]"}]}
+          }], ")"}], 
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          RowBox[{"t", "*", 
+           RowBox[{"(", 
+            RowBox[{"1", "-", 
+             RowBox[{
+              RowBox[{"Cos", "[", 
+               RowBox[{"\[Pi]", "/", "n"}], "]"}], "/", 
+              RowBox[{"Cos", "[", "\[Theta]", "]"}]}]}], ")"}]}]}], ")"}]}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "0", ",", "n"}], "}"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\[Theta]", ",", 
+       RowBox[{
+        RowBox[{"-", "\[Pi]"}], "/", "n"}], ",", 
+       RowBox[{"\[Pi]", "/", "n"}]}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", "1"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "3", ",", "10", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "1", ",", "0.01"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.728818244647952*^9, 3.7288184049162955`*^9}, {
+  3.7288184907892075`*^9, 3.7288186235346155`*^9}, {3.72881868172808*^9, 
+  3.7288186939506235`*^9}, {3.728818777334942*^9, 3.72881882630203*^9}, {
+  3.7288189275226555`*^9, 3.728818933195385*^9}, {3.728818968731532*^9, 
+  3.728818973544219*^9}, {3.7288190413739414`*^9, 3.728819043812111*^9}, {
+  3.7288190817790365`*^9, 3.728819141955714*^9}, {3.728826665894235*^9, 
+  3.7288267401393623`*^9}, {3.7288268948295326`*^9, 3.7288268949821615`*^9}, {
+  3.728826925085124*^9, 3.7288269717866573`*^9}, {3.7288270210817857`*^9, 
+  3.728827022091471*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`n$$ = 3, $CellContext`t$$ = 0, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`n$$], 3, 10, 1}, {
+      Hold[$CellContext`t$$], 0, 1, 0.01}}, Typeset`size$$ = {
+    360., {175., 180.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`n$22814$$ = 
+    0, $CellContext`t$22815$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`n$$ = 3, $CellContext`t$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`n$$, $CellContext`n$22814$$, 0], 
+        Hold[$CellContext`t$$, $CellContext`t$22815$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> ParametricPlot[
+        Table[{{
+            
+            Cos[$CellContext`\[Theta] + $CellContext`i 
+              2 (Pi/$CellContext`n$$)]}, {
+            
+            Sin[$CellContext`\[Theta] + $CellContext`i 
+              2 (Pi/$CellContext`n$$)]}} (
+          1 - $CellContext`t$$ (1 - Cos[Pi/$CellContext`n$$]/
+           Cos[$CellContext`\[Theta]])), {$CellContext`i, 
+          0, $CellContext`n$$}], {$CellContext`\[Theta], (-
+          Pi)/$CellContext`n$$, Pi/$CellContext`n$$}, PlotRange -> 1], 
+      "Specifications" :> {{$CellContext`n$$, 3, 10, 1}, {$CellContext`t$$, 0,
+          1, 0.01}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{411., {236., 242.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.728818302537302*^9, 3.7288183376395283`*^9, {3.72881839022398*^9, 
+   3.7288184062441*^9}, {3.728818544467596*^9, 3.7288185733934507`*^9}, 
+   3.72881862483108*^9, 3.7288191430652103`*^9, 3.728820408841036*^9, 
+   3.7288267486527166`*^9, 3.72882689934277*^9, {3.7288269335156174`*^9, 
+   3.728826973327052*^9}, 3.7288270241034775`*^9, 3.73060697471004*^9, 
+   3.730609112358385*^9}]
+}, Open  ]],
+
+Cell["\<\
+Calcoliamo adesso C. Questa \[EGrave] data dalla proiezione sulla normale \
+istantanea della velocit\[AGrave] puntuale dei punti nella curva. Calcolo \
+prima la normale istantanea. La tangente istantanea \[EGrave] data da:\
+\>", "Text",
+ CellChangeTimes->{{3.728819182122075*^9, 3.7288192630751247`*^9}, 
+   3.728820608220609*^9, {3.7306078513936224`*^9, 3.7306079274427123`*^9}, {
+   3.7306087189947577`*^9, 3.7306087208870487`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Tng", "[", 
+   RowBox[{"\[Theta]_", ",", "n_", ",", "t_"}], "]"}], ":=", 
+  RowBox[{"D", "[", 
+   RowBox[{
+    RowBox[{"\[Gamma]", "[", 
+     RowBox[{"\[Theta]", ",", "n", ",", "t"}], "]"}], ",", "\[Theta]"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.7306079320651417`*^9, 3.7306079678128653`*^9}, {
+  3.730608114413617*^9, 3.7306081166205935`*^9}, {3.7306087733708315`*^9, 
+  3.730608777284281*^9}, {3.730609177237381*^9, 3.7306091787142982`*^9}}],
+
+Cell["Attraverso una rotazione si trova la normale:", "Text",
+ CellChangeTimes->{{3.7306087273606377`*^9, 3.730608756731485*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Nrm", "[", 
+   RowBox[{"\[Theta]_", ",", "n_", ",", "t_"}], "]"}], ":=", 
+  RowBox[{"FullSimplify", "[", 
+   RowBox[{
+    RowBox[{"Normalize", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0", ",", "1"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "1"}], ",", "0"}], "}"}]}], "}"}], ".", 
+      RowBox[{"Tng", "[", 
+       RowBox[{"\[Theta]", ",", "n", ",", "t"}], "]"}]}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"\[Theta]", "\[Element]", "Reals"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.730608758887842*^9, 3.7306088221819973`*^9}, {
+  3.7306091746943016`*^9, 3.730609184362651*^9}, {3.730609341026028*^9, 
+  3.7306093695588884`*^9}, {3.7306094059984183`*^9, 3.7306094221999636`*^9}, {
+  3.7306094522563887`*^9, 3.7306094627551346`*^9}}],
+
+Cell["La velocit\[AGrave] puntuale \[EGrave] data da:", "Text",
+ CellChangeTimes->{{3.7306088709386277`*^9, 3.730608889214016*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"VP", "[", 
+   RowBox[{"\[Theta]_", ",", "n_"}], "]"}], ":=", 
+  RowBox[{"Simplify", "[", 
+   RowBox[{"D", "[", 
+    RowBox[{
+     RowBox[{"\[Gamma]", "[", 
+      RowBox[{"\[Theta]", ",", "n", ",", "t"}], "]"}], ",", "t"}], "]"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"VP", "[", 
+  RowBox[{"\[Theta]", ",", "n"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7306088908684907`*^9, 3.730608974995305*^9}, {
+  3.730609007843133*^9, 3.73060900843337*^9}, {3.7306118427982607`*^9, 
+  3.7306118680023937`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Cos", "[", 
+     FractionBox["\[Pi]", "n"], "]"}], "-", 
+    RowBox[{"Cos", "[", "\[Theta]", "]"}]}], ",", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", "1"}], "+", 
+      RowBox[{
+       RowBox[{"Cos", "[", 
+        FractionBox["\[Pi]", "n"], "]"}], " ", 
+       RowBox[{"Sec", "[", "\[Theta]", "]"}]}]}], ")"}], " ", 
+    RowBox[{"Sin", "[", "\[Theta]", "]"}]}]}], "}"}]], "Output",
+ CellChangeTimes->{3.7306118683293233`*^9}]
+}, Open  ]],
+
+Cell["Da cui, proiettando lungo la normale si trova C:", "Text",
+ CellChangeTimes->{{3.730608923053578*^9, 3.7306089384150333`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"VC", "[", 
+   RowBox[{"\[Theta]_", ",", "n_", ",", "t_"}], "]"}], ":=", 
+  RowBox[{"Simplify", "[", 
+   RowBox[{"TrigReduce", "[", 
+    RowBox[{
+     RowBox[{"VP", "[", 
+      RowBox[{"\[Theta]", ",", "n"}], "]"}], ".", 
+     RowBox[{"Nrm", "[", 
+      RowBox[{"\[Theta]", ",", "n", ",", "t"}], "]"}]}], "]"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"VCZ", "[", 
+   RowBox[{"\[Theta]_", ",", "n_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Cos", "[", 
+     RowBox[{"\[Pi]", "/", "n"}], "]"}], "/", 
+    RowBox[{"Cos", "[", 
+     RowBox[{"\[Theta]", "/", "n"}], "]"}]}], "-", "1"}]}]}], "Input",
+ CellChangeTimes->{{3.730609019226039*^9, 3.7306090684958897`*^9}, {
+  3.730609510105282*^9, 3.730609674287382*^9}, {3.730610730347866*^9, 
+  3.730610754295892*^9}, {3.730611892661399*^9, 3.7306118928358607`*^9}, {
+  3.7306121075672035`*^9, 3.7306122351258574`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"VCZ", "[", 
+  RowBox[{"\[Theta]", ",", 
+   RowBox[{"1", "/", "z"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.730612239538899*^9, 3.730612272758562*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", "1"}], "+", 
+  RowBox[{
+   RowBox[{"Cos", "[", 
+    RowBox[{"\[Pi]", " ", "z"}], "]"}], " ", 
+   RowBox[{"Sec", "[", 
+    RowBox[{"z", " ", "\[Theta]"}], "]"}]}]}]], "Output",
+ CellChangeTimes->{3.730612273321207*^9}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.730612252671582*^9, 3.730612253936827*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Series", "[", 
+  RowBox[{
+   RowBox[{"VCZ", "[", 
+    RowBox[{"\[Theta]", ",", 
+     RowBox[{"1", "/", "z"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"z", ",", "0", ",", "4"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.730612010101124*^9, 3.7306120800406876`*^9}, {
+  3.730612140460253*^9, 3.730612140688264*^9}, {3.7306122781493225`*^9, 
+  3.730612282105818*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   RowBox[{
+    FractionBox["1", "2"], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", 
+       SuperscriptBox["\[Pi]", "2"]}], "+", 
+      SuperscriptBox["\[Theta]", "2"]}], ")"}], " ", 
+    SuperscriptBox["z", "2"]}], "+", 
+   RowBox[{
+    FractionBox["1", "24"], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      SuperscriptBox["\[Pi]", "4"], "-", 
+      RowBox[{"6", " ", 
+       SuperscriptBox["\[Pi]", "2"], " ", 
+       SuperscriptBox["\[Theta]", "2"]}], "+", 
+      RowBox[{"5", " ", 
+       SuperscriptBox["\[Theta]", "4"]}]}], ")"}], " ", 
+    SuperscriptBox["z", "4"]}], "+", 
+   InterpretationBox[
+    SuperscriptBox[
+     RowBox[{"O", "[", "z", "]"}], "5"],
+    SeriesData[$CellContext`z, 0, {}, 2, 5, 1],
+    Editable->False]}],
+  SeriesData[$CellContext`z, 0, {
+   Rational[1, 2] (-Pi^2 + $CellContext`\[Theta]^2), 0, 
+    Rational[1, 24] (Pi^4 - 6 Pi^2 $CellContext`\[Theta]^2 + 
+     5 $CellContext`\[Theta]^4)}, 2, 5, 1],
+  Editable->False]], "Output",
+ CellChangeTimes->{3.7306120842349324`*^9, 3.7306122834444766`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"Integrate", "[", 
+  RowBox[{"Series", "[", 
+   RowBox[{
+    RowBox[{"VCZ", "[", 
+     RowBox[{"\[Theta]", ",", 
+      RowBox[{"1", "/", "z"}]}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"z", ",", "0", ",", "4"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7306123083391266`*^9, 3.730612324062038*^9}}]
+}, Open  ]]
+},
+WindowSize->{1368, 839},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (September 21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 445, 7, 77, "Subsubsection"],
+Cell[1028, 31, 378, 10, 30, "Input"],
+Cell[1409, 43, 814, 12, 87, "Text"],
+Cell[2226, 57, 693, 17, 30, "Input"],
+Cell[CellGroupData[{
+Cell[2944, 78, 712, 18, 30, "Input"],
+Cell[3659, 98, 2085, 41, 495, "Output"]
+}, Open  ]],
+Cell[5759, 142, 210, 5, 30, "Text"],
+Cell[CellGroupData[{
+Cell[5994, 151, 2026, 50, 46, "Input"],
+Cell[8023, 203, 2631, 53, 495, "Output"]
+}, Open  ]],
+Cell[10669, 259, 444, 7, 30, "Text"],
+Cell[11116, 268, 487, 11, 30, "Input"],
+Cell[11606, 281, 129, 1, 30, "Text"],
+Cell[11738, 284, 873, 22, 30, "Input"],
+Cell[12614, 308, 131, 1, 30, "Text"],
+Cell[CellGroupData[{
+Cell[12770, 313, 544, 14, 50, "Input"],
+Cell[13317, 329, 511, 16, 43, "Output"]
+}, Open  ]],
+Cell[13843, 348, 132, 1, 30, "Text"],
+Cell[13978, 351, 925, 24, 50, "Input"],
+Cell[CellGroupData[{
+Cell[14928, 379, 176, 4, 30, "Input"],
+Cell[15107, 385, 256, 8, 30, "Output"]
+}, Open  ]],
+Cell[15378, 396, 92, 1, 30, "Input"],
+Cell[CellGroupData[{
+Cell[15495, 401, 398, 10, 30, "Input"],
+Cell[15896, 413, 1085, 32, 45, "Output"]
+}, Open  ]],
+Cell[16996, 448, 335, 9, 30, "Input"]
+}, Open  ]]
+}
+]
+*)
+

@@ -21,12 +21,12 @@
 	\subsection{Hadamard's term}
 		Having established how we intend to approach the problem let us start by differentiating with respect to time equation \ref{eqn:lapleig}. Assuming everything is well behaved enough that we can apply Shwartz's lemma we get:
 		\begin{gather}
-			\label{eqn:hadter}
 			\Delta\partial_{t}\psi=\lambda'\psi+\lambda\partial_{t}\psi
 		\end{gather}
 		Where $ \lambda' $ indicates the time derivative of $ \lambda $. It is a remarkable result of the calculus of moving surfaces that:
 		\begin{gather}
-			\lambda'=-\int_{S}C\left|\nabla\psi\right|^{2}dS
+			\label{eqn:hadter}
+			\lambda'=-\int_{\partial\Omega}C\scal{\nabla\psi}{\nabla\psi}dS
 		\end{gather}
 		$ C $ being the interface velocity of the boundary. Because this relation was found by Hadamard we shall refer to $ \lambda' $ as the Hadamard term. As suggested by Strang and Grinfeld to remove this leading term one should keep the area constant. It is intuitive to see why it should be so if only $ C $ were inside the integral: the integral acts as a mediator on all of the small displacements of the curve, thus, if the total (signed) area is null, thus should be the integral. This intuition may be corroborated by the following argument: suppose we seek to calculate the area at a time $ t $ of the subset $ \Omega $ enclosed by our curve. This may be expressed as an integral as:
 		\begin{equation}
