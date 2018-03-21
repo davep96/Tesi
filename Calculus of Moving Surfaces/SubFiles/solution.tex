@@ -111,4 +111,52 @@
 			\end{align}
 			Where we used lemma \ref{lem:psipsitorth} for the first equality.
 		\end{proof}
+		\subsection{Homotopy}
+		The choice of a correct homotopy is a very delicate a subtle process. In general, there are a great number of such transformations which might be used, but due to interrelation they might be prohibitive. In the optimum case, one would like to find a homotopy which is area conserving at all times, in order to eliminate Hadamard's term. It is not too hard to write a homotopy mapping the circle to a polygon with equal area, however it is hard to write one conserving the area at all times, i.e. such that:
+		\begin{gather}
+			A(t)'=\der{}{t}\int_{\Omega}d\Omega=0
+		\end{gather}
+		Such a homotopy would have some points moving inward and some points moving outward in such a way that the total signed area \emph{averages out}. At the end of the transformation process some of the points of the side of the polygon will be inside the original circle, while the vertices and some other points will be on the outside.
+		Grinfeld and Strang leave this problem to be solved by posterity. In the mean time, they consider a homotopy such that each point moves radially to the inscribed polygon with constant speed. With reference to figure \ref{fig:hom} one can write: 
+		\begin{figure}
+			\centering
+			
+			\begin{tikzpicture}
+			\draw[step=1cm,gray,very thin] (-0.9,-2.9) grid (4.9,2.9);
+			\draw[very thick,->] (0,-2.9)--(0,2.9);
+			\draw[very thick,->] (-0.9,0)--(4.9,0);
+			\draw[thick] (3,0) arc (0:75:3cm);
+			\draw[thick] (3,0) arc (0:-75:3cm);
+			\draw[thick] (0,0) --(2,2.24);
+			\draw[thick] (0,0)--(2,-2.24);
+			\draw[thick] (0.3,0) arc (0:46:0.3);
+			\draw[thick] (0.3,0) node[anchor=north west] {$\;\varphi=\dfrac{2\pi}{N}$ };
+			\draw[thick] (0.3,0) arc (0:-46:0.3);
+			\draw[thick] (0,0) -- (2.85,0.9) node[anchor = south west]{$A$};
+			\draw[thick] (0.38,0) arc (0:19:0.38) ;
+			\draw[thick] (1.1,0) node[anchor = south west]{$\theta$};
+			\draw[thick] (2,-2.24) -- (2,2.24);
+			\draw[thick] (2.2,0.7) node[anchor = south west]{$d$};
+			\draw[thick] (3,0) node[anchor = south west]{1};
+			\end{tikzpicture}
+			\caption{Arc of a circle with side of $ N $-gon. The distance traveled by point $ A$ is $ d $.}\label{fig:hom}
+		\end{figure}
+		
+		\begin{gather}
+			d(\theta,N)=1-\dfrac{\cos\left(\frac{\pi}{N}\right)}{\cos\left(\theta\right)}
+		\end{gather}
+		As each point is moving with constant speed, the speed of each point is proportional to the distance traveled. We set the proportionality constant equal to minus one. Hence, each point moves with speed $ V(\theta,N)=-d(\theta,N) $. One can parametrize the homomorphism as:
+		\begin{gather}
+		\gamma\left(\theta,N,t\right)=
+		\left(\begin{array}{c}
+		\cos(\theta) \\ 
+		\sin(\theta)
+		\end{array}\right)(1+tV(\theta,N))
+		\end{gather}
+		This way, for $ t=0 $ we return to a parametrization of the circle and for $ t=1 $ we get that of the polygon. It should be noted that this function is not valid for all $ \theta $; it is only valid for $ \theta \in\left[-\frac{pi}{N},\frac{pi}{N}\right] $. To get a complete curve one must extend this result.
+		\section{Interface velocity}
+		We now seek to calculate $ C $ in order to use Hadamard's formula to get the first variation. The tangent to the curve is:
+		\begin{gather}
+		T(\theta,N,t)=\der{\gamma(\theta,N,t)}{\theta}=
+		\end{gather}
 \end{document}
